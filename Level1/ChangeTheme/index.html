@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Theme</title>
+    <style>
+        .container{
+			width: 500px;
+			margin: 100px auto;
+		}
+
+		#skin li{
+			width: 10px;
+			height: 10px;
+            display: inline-block;
+			cursor: pointer;
+			border: 4px solid;
+		}
+
+        #skin li .current{
+            background: #fff;
+        }
+
+        #red{
+			border-color: red;
+			background: red;
+		}
+
+		#green{
+			border-color: green;
+			background: green;
+		}
+
+		#black{
+			border-color: black;
+			background: black;
+		}
+
+		#nav{			
+			height: 40px;
+			line-height: 40px;
+			margin: 0;
+			padding:0;
+		}
+
+		#nav li{
+			float: left;			
+			width: 98px;
+			text-align: center;
+			border:1px solid #fff;
+            list-style: none;
+		}
+
+		#nav li a{
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+			color: #fff;
+		}
+    </style>
+    <script>
+        window.onload = function(){
+            var skin = document.getElementById('skin');
+            var skinColor = skin.getElementsByTagName('li');
+            var nav = document.getElementById('nav');
+            for(var i=0; i<skinColor.length;i++){
+                skinColor[i].index = i;
+                nav.style.backgroundColor = 'green';
+                document.body.style.backgroundColor = '#A3C5A8';
+                skinColor[1].style.backgroundColor = '#fff';
+                skinColor[i].onclick = function(){                                        
+                    for(var i=0; i<skinColor.length;i++){
+                        skinColor[i].style.backgroundColor = '';
+                    }
+                    skinColor[this.index].style.backgroundColor = '#fff';
+                    switch(this.index){
+                    case 0:
+                    nav.style.backgroundColor = 'red';
+                    document.body.style.backgroundColor = '#fdd';
+                    break;    
+                    case 1:                    
+                    nav.style.backgroundColor = 'green';
+                    document.body.style.backgroundColor = '#A3C5A8';
+                    break;
+                    case 2:
+                    nav.style.backgroundColor = 'black';
+                    document.body.style.backgroundColor = '#ccc';                    
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <ul id="skin">
+            <li id="red"></li>
+            <li id="green" class="current"></li>
+            <li id="black"></li>
+        </ul>
+        <ul id="nav">
+            <!-- #链接到本页，我希望有个链接样式又不希望它跳转，也表示回到最顶部 -->
+            <li><a href="#">Html</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JS</a></li>
+            <li><a href="#">PHP</a></li>
+            <li><a href="#">SQL</a></li>
+        </ul>
+    </div>
+    
+    
+</body>
+</html>
