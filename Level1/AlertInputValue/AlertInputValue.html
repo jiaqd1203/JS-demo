@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Input Value</title>
+    <style>
+        #container{
+            text-align: center;
+            margin-top: 200px;            
+        }
+
+        input{
+            display: block;
+            margin: 10px auto;
+            height: 20px;
+        }
+
+        button{
+            height: 25px;
+        }
+
+    </style>
+    <script>
+        window.onload = function(){
+            function myFun(a,b){
+                alert(a);
+                alert(b);
+            }
+            var val = document.getElementsByTagName('input');
+            // [0]important
+            var btn = document.getElementsByTagName('button')[0];
+            btn.onclick = function(){
+                myFun(val[0].value,val[1].value);
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="container">
+        <input type="text" id="text1" value="England">
+        <input type="text" id="text2" value="London">
+        <button>Submit</button>
+    </form>
+</body>
+</html>
