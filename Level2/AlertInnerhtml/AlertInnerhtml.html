@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Innerhtml</title>
+    <style>
+        body{
+            font-size: 14px;
+        }
+
+        div{
+            border:2px solid #ccc;
+			border-radius: 5px;
+			margin:10px auto;
+			width:500px;
+			padding:5px 10px;
+			cursor: pointer;
+        }
+
+        p{
+            text-indent: 2em;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementsByTagName('div');
+            for(var i=0;i<oDiv.length;i++){
+                oDiv[i].onclick = function(){
+                    alert(this.innerHTML);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <p><strong>Barcelona vs Atletico Madrid: Thrilling La Liga title race reaches climax at Camp Nou
+            </strong>Diego Simeone's Atletico Madrid still top La Liga, but the chasing pack are closing in; follow
+            Barcelona vs Atletico Madrid via our dedicated live blog on Sky Sports website and app on Saturday; kick-off
+            at 3.15pm
+        </p>
+    </div>
+    <div>
+        <p><strong>Champions League, Europa League dates, fixtures, teams - when and where are the finals?</strong>Man
+            City and Chelsea through to Champions League final on Saturday May 29; Manchester United and Arsenal in
+            Europa League last four
+        </p>
+    </div>
+    <div>
+        <p><strong>Eden Hazard 'owes' Real Madrid fans following Chelsea defeat, says Terry Gibson</strong>Spanish
+            football expert Terry Gibson says Eden Hazard 'owes' the Real Madrid fans after he was seen laughing and
+            joking with Chelsea players following Real's Champions League defeat at Stamford Bridge; Hazard was
+            substituted a minute from the end after an ineffectual game</p>
+    </div>
+    <div>
+        <p><strong>Sergio Aguero: Barcelona hold initial talks with Man City forward's representatives over free
+                transfer</strong>Barcelona interested in signing Sergio Aguero on free transfer; Argentine striker is to
+            leave Manchester City at the end of the season; Aguero is Man City's record goalscorer with 258 goals in 387
+            appearances
+        </p>
+    </div>
+</body>
+
+</html>
