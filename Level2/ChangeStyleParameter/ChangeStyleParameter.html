@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receive Parameters to change the style</title>
+</head>
+<style>
+    #container{
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    #container label{
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #container button{
+        margin: 5px;
+
+    }
+
+    #box{
+            width: 160px;
+			height: 160px;
+			color: #fff;
+			background: #000;
+            margin: 20px auto;
+            font-size: 14px;
+            text-align: left;
+            padding: 5px;
+    }
+
+</style>
+<script>
+    window.onload = function(){
+        var props = document.getElementById('props');
+        var val = document.getElementById('value');
+        var box = document.getElementById('box');
+        var btn1 = document.getElementsByTagName('button')[0];
+        var btn2 = document.getElementsByTagName('button')[1];
+
+        var changeStyle = function(ele,props,value){
+            ele.style[props] = value;
+        }
+
+        btn1.onclick = function(){
+            // 用props[value]不行
+            changeStyle(box,props.value,val.value)
+        }
+
+        btn2.onclick = function(){
+            box.removeAttribute('style');
+        }
+
+    }
+</script>
+<body>
+    <div id="container">
+        <label>Props: <input type="text" id="props" value="background"></label>
+        <label>Value: <input type="text" id="value" value="blue"></label>
+        <label><button>Submit</button><button>Reset</button></label>
+    </div>
+    <div id="box">Please insert props name and value then click Submit button.</div>
+</body>
+</html>
