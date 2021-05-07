@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseOver and MouseOut change Opacity of pictures</title>
+    <style>
+        #imgList{
+            width: 700px;
+            margin: 20px auto;
+            border:1px solid #333;
+            /* BFC */
+            overflow: hidden;
+            padding-left: -0px;
+        }
+
+        li{
+            width: 128px;
+            height: 128px;
+            float: left;
+            list-style: none;
+            border: 1px solid #ccc;
+            margin: 5px;
+        }
+
+        li img{
+            opacity: 0.3;
+            cursor: crosshair;
+        }
+
+        .current{
+            opacity: 1;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var imgList = document.getElementById('imgList');
+            var img = imgList.getElementsByTagName('img');
+            for(var i=0; i<img.length; i++){
+                img[i].onmouseover = function(){
+                    this.className = 'current';
+                }
+
+                img[i].onmouseout = function(){ 
+                    this.className = '';
+                }
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <ul id="imgList">
+        <li><img src="img/1.jpg"/></li>
+        <li><img src="img/2.jpg"/></li>
+        <li><img src="img/3.jpg"/></li>
+        <li><img src="img/4.jpg"/></li>
+        <li><img src="img/5.jpg"/></li>
+        <li><img src="img/6.jpg"/></li>
+        <li><img src="img/7.jpg"/></li>
+        <li><img src="img/8.jpg"/></li>
+        <li><img src="img/9.jpg"/></li>
+        <li><img src="img/10.jpg"/></li>
+    </ul>
+</body>
+</html>
