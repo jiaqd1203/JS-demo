@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 450px;
+            margin: 10px auto;
+            /* border: ; */
+        }
+
+        #tab{
+            width: 100%;
+            height: 30px;
+            background-color: #000;
+            line-height: 30px;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+
+        #tab li{
+            width: 80px;
+            text-align: center;
+            padding: 0 10px;
+            float: left;
+            list-style: none;
+            cursor: pointer;
+            color: #fff;          
+        }
+
+        #tab li.current{
+            background-color: #ccc;
+            color: #000;
+        }
+
+        #content{            
+            border: 1px solid #000;
+            border-top: none;
+        }
+
+        #content ul{
+           line-height: 25px;
+           margin: 0 30px;
+           padding: 10px 0;
+           display: none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oLi = document.getElementById("tab").getElementsByTagName("li");
+            var oUl = document.getElementById("content").getElementsByTagName("ul");
+            for(var i=0; i<oLi.length; i++){
+                // 给每个li绑定一个索引号oLi[0].index = 0;oLi[1].index = 1;
+                oLi[i].index = i;
+                oLi[i].onmouseover = function(){
+                    for(var j = 0; j < oLi.length; j++){
+                        oLi[j].className = '';
+                    }
+                    // 当前滑过的加个class并且其他的去掉class
+                    this.className = 'current';
+                    for(var j = 0; j < oUl.length; j++){
+                        oUl[j].style.display = 'none';
+                    }
+                    oUl[this.index].style.display = 'block';
+                }
+                    
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="tab">
+            <li>Html</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+        </ul>
+        <div id="content">
+            <ul>
+                <li>HTML Tutorial</li>
+                <li>HTML Tutorial</li>
+                <li>HTML Tutorial</li>
+                <li>HTML Tutorial</li>
+                <li>HTML Tutorial</li>
+                <li>HTML Tutorial</li>
+                <li>HTML Tutorial</li>
+            </ul>
+            <ul>
+                <li>CSS Tutorial</li>
+                <li>CSS Tutorial</li>
+                <li>CSS Tutorial</li>
+                <li>CSS Tutorial</li>
+                <li>CSS Tutorial</li>
+                <li>CSS Tutorial</li>
+                <li>CSS Tutorial</li>
+                <li>CSS Tutorial</li>
+            </ul>
+            <ul>
+                <li>JavaScript Tutorial</li>
+                <li>JavaScript Tutorial</li>
+                <li>JavaScript Tutorial</li>
+                <li>JavaScript Tutorial</li>
+                <li>JavaScript Tutorial</li>
+                <li>JavaScript Tutorial</li>
+                <li>JavaScript Tutorial</li>
+                <li>JavaScript Tutorial</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
