@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show-Hide Playlist</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #container{
+			margin:100px auto;
+			width: 200px;
+			border: 1px solid #aaa;
+		}
+
+        h2{
+			color: #57646E;
+			height: 30px;
+			line-height: 30px;
+			padding-left: 10px;
+			background: #ced3d7 url(img/ico.gif) no-repeat 180px 15px;
+			font-size: 14px;
+			border: 1px solid;
+			border-color: #fff #e9edf2;
+			cursor: pointer;
+		}
+
+        h2.open{
+			background-position: 180px -12px;
+		}
+
+        ul{
+			border-top: 1px solid #DEE3E6;
+		}
+
+        ul li{
+			height: 25px;
+			line-height: 25px;
+			display: block;
+		}
+
+        a{
+			display: block;
+			background: #e9edf2;
+			color: #6b7980;
+			padding-left: 10px;
+			text-decoration: none;
+		}
+
+        a:hover{
+			background: #fff;
+		}
+    </style>
+    <script>
+        window.onload = function(){
+            var oH = document.getElementsByTagName("h2")[0];
+            var oUl = document.getElementsByTagName("ul")[0];
+            oH.onclick = function(){
+                var style = oUl.style;
+                style.display = style.display == 'none' ? 'block':'none';
+                oH.className = style.display == 'none' ? 'open' : '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>Playlist...</h2>
+        <ul>
+            <li><a href="javascript:;">A Hard Day’s Night</a></li>
+            <li><a href="javascript:;">A Day in the Life</a></li>
+            <li><a href="javascript:;">Yesterday</a></li>
+            <li><a href="javascript:;">Let it Be</a></li>
+            <li><a href="javascript:;">Something</a></li>
+            <li><a href="javascript:;">She Loves You</a></li>
+            <li><a href="javascript:;">Hey Jude</a></li>
+            <li><a href="javascript:;">In My Life</a></li>
+        </ul>
+    </div>
+</body>
+</html>
