@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annual Calendar</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #container{
+            width: 248px;
+            margin: 100px auto;
+            background-color: #eaeaea;
+            padding-bottom: 10px;
+        }
+        
+        ul{
+            overflow: hidden;
+            /* padding-right: 5px; */
+        }
+
+        li{
+            list-style: none;
+            background-color: #424242;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            float: left;
+            cursor: pointer;
+            border:1px solid #424242;
+			text-align: center;
+			font-size: 14px;
+            margin: 10px 5px 0 5px;
+        }
+        
+        li.current{
+            background-color: #fff;
+            color: #f69;
+        }
+
+        #content{
+            background-color: #f1f1f1;
+            color: #666;
+            border:1px solid #fff;
+            margin: 10px 5px 0 5px;
+            padding: 5px;
+        }
+        p{
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oLi = document.getElementById("container").getElementsByTagName("li");
+            var cont = document.getElementById("content");
+            var oH = cont.getElementsByTagName("h2")[0];
+            var oP = cont.getElementsByTagName("p")[0];            
+            var arr1 = [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December'
+            ];
+            var arr2 = [
+                'BURNS’ NIGHT (SCOTLAND)',
+                'VALENTINE’S DAY',
+                'ST DAVID’S DAY <br /> MOTHER’S DAY<br/>ST PATRICK’S DAY<br />',
+                'APRIL FOOLS’ DAY <br/> EASTER <br/> ST GEORGE’S DAY',
+                '',
+                'FATHER’S DAY<br/>THE QUEEN’S OFFICIAL BIRTHDAY<br/>SUMMER SOLSTICE',
+                'EID AL-FITR',
+                'EISTEDDFOD <br/> EDINBURGH FRINGE FESTIVAL <br/> NOTTING HILL CARNIVAL',
+                'LONDON FASHION WEEK',
+                'HALLOWEEN',
+                'MOVEMBER <br/> BONFIRE NIGHT <br/> REMEMBRANCE DAY <br/> ST ANDREW’S DAY (SCOTLAND)',
+                'CHRISTMAS DAY'
+            ];
+
+            for(var i = 0; i < oLi.length; i++){
+                oLi[i].index = i;
+                oLi[i].onmouseover = function(){
+                    for(var j = 0; j < oLi.length; j++){
+                        oLi[j].className = '';
+                        // oLi[this.index].className = 'current';
+                        this.className = 'current';
+                        oH.innerHTML = arr1[this.index];
+                        // innerText显示<br />,innerHTML不显示
+                        oP.innerHTML = arr2[this.index];
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li>JAN</li>
+            <li>FEB</li>
+            <li>MAR</li>
+            <li>APR</li>
+            <li>MAY</li>
+            <li>JUN</li>
+            <li>JUL</li>
+            <li>AUG</li>
+            <li>SEP</li>
+            <li>OCT</li>
+            <li>NOV</li>
+            <li>DEC</li>
+        </ul>
+        <div id="content">
+            <h2>JUNE</h2>
+            <p>FATHER’S DAY<br/>THE QUEEN’S OFFICIAL BIRTHDAY<br/>SUMMER SOLSTICE</p>
+        </div>
+    </div>
+</body>
+</html>
