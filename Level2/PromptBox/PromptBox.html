@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Box</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 620px;
+        margin: 100px auto;
+        border: 1px solid #333;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .container h2 {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .container ul {
+        /* overflow: hidden; */
+        width: 620px;
+        margin: 10px auto;
+    }
+
+    .clearfix::after {
+        content: "";
+        display: table;
+        height: 0;
+        clear: both;
+    }
+
+    .container ul li {
+        float: left;
+        margin: 10px 6px 0px 6px;
+        border: 1px solid #333;
+        position: relative;
+        list-style: none;
+        text-align: center;
+    }
+
+    .container ul li img {
+        display: none;
+        position: absolute;
+        top: -16px;
+        left: -11px;
+        border: 2px solid #999;
+        cursor: crosshair;
+        z-index: 999;
+    }
+
+    .container ul li a {
+        width: 90px;
+        height: 80px;
+        color: #666;
+        display: block;
+        background: #f0f0f0;
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    .container ul li a strong {
+        display: block;
+        text-align: center;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var oLi = document.getElementsByTagName('li');
+        var oImg = document.getElementsByTagName('img');
+        for (var i = 0; i < oLi.length; i++) {
+            oLi[i].index = i;
+            oLi[i].onmouseover = function () {
+                oImg[this.index].style.display = 'block';
+            }
+
+            oLi[i].onmouseout = function () {
+                oImg[this.index].style.display = '';
+            }
+        }
+    }
+</script>
+
+<body>
+    <div class="container">
+        <h2>Mouse over to display the car logo</h2>
+        <ul class="clearfix">
+            <li>
+                <a href="javascript:;" title="BMW"><strong>BMW</strong></a>
+                <img src="img/1.jpg" alt="BMW" />
+            </li>
+            <li>
+                <a href="javascript:;" title="Alfa Romeo"><strong>Alfa Romeo</strong></a>
+                <img src="img/2.jpg" alt="Alfa Romeo" />
+            </li>
+            <li>
+                <a href="javascript:;" title="Skoda"><strong>Skoda</strong></a>
+                <img src="img/3.jpg" alt="Skoda" />
+            </li>
+            <li>
+                <a href="javascript:;" title="Volkswagen"><strong>Volkswagen</strong></a>
+                <img src="img/4.jpg" alt="Volkswagen" />
+            </li>
+            <li>
+                <a href="javascript:;" title="Saab"><strong>Saab</strong></a>
+                <img src="img/5.jpg" alt="Saab" />
+            </li>
+            <li>
+                <a href="javascript:;" title="Lamborghini"><strong>Lamborghini</strong></a>
+                <img src="img/6.jpg" alt="Lamborghini" />
+            </li>
+            <li>
+                <a href="javascript:;" title="Porsche"><strong>Porsche</strong></a>
+                <img src="img/7.jpg" alt="Porsche" />
+            </li>
+            <li>
+                <a href="javascript:;" title="Peugeot"><strong>Peugeot</strong></a>
+                <img src="img/8.jpg" alt="Peugeot" />
+            </li>
+            <li>
+                <a href="javascript:;" title="Mercedes"><strong>Mercedes</strong></a>
+                <img src="img/9.jpg" alt="Mercedes" />
+            </li>
+            <li>
+                <a href="javascript:;" title="Buick"><strong>Buick</strong></a>
+                <img src="img/10.jpg" alt="Buick" />
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
