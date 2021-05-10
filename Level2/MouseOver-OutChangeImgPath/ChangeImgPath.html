@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Img Path</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 212px;
+            border: 1px solid #fff;
+            overflow: hidden;
+            background: #000;
+            border-radius: 5px;
+            margin: 200px auto;
+            padding: 0 0 3px 3px;
+        }
+
+        .container li {
+            float: left;
+            width: 50px;
+            height: 50px;
+            margin: 3px 3px 0 0;
+            list-style: none;
+        }
+
+        .container li img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .container li.first {
+            position: relative;
+        }
+
+        .container li.first,
+        .container li.first img {
+            width: 156px;
+            height: 156px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oImg = document.getElementsByClassName("container")[0].getElementsByTagName("img");
+            var oDiv = document.getElementsByTagName("div")[0];
+            for (var i = 1; i < oImg.length; i++) {
+                oImg[i].onmouseover = function () {
+                    oImg[0].src = this.src.replace(/small/, 'big');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul class="container">
+        <li class="first"><img src="img/big_1.jpg"></li>
+        <li><a href="javascript:;"><img src="img/small_1.jpg"></a></li>
+        <li><a href="javascript:;"><img src="img/small_2.jpg"></a></li>
+        <li><a href="javascript:;"><img src="img/small_3.jpg"></a></li>
+        <li><a href="javascript:;"><img src="img/small_4.jpg"></a></li>
+        <li><a href="javascript:;"><img src="img/small_5.jpg"></a></li>
+        <li><a href="javascript:;"><img src="img/small_6.jpg"></a></li>
+        <li><a href="javascript:;"><img src="img/small_7.jpg"></a></li>
+        <li><a href="javascript:;"><img src="img/small_8.jpg"></a></li>
+        <li><a href="javascript:;"><img src="img/small_9.jpg"></a></li>
+        <li><a href="javascript:;"><img src="img/small_10.jpg"></a></li>
+        <li><a href="javascript:;"><img src="img/small_11.jpg"></a></li>
+    </ul>
+</body>
+
+</html>
