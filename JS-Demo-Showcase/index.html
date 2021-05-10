@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JS Demo Showcase</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .menu {
+            width: 350px;
+            margin: 200px auto;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px;
+            color: #fff;
+            border: 1px solid grey;
+        }
+
+        .menu div {
+            background-color: #07ca07;
+            overflow: hidden;
+        }
+
+        .menu span {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            font-weight: 700;
+            background-color: #07ca07;
+            border-bottom: 1px solid #ddd;
+            padding: 5px;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+
+        .menu ul {
+            display: none;
+        }
+
+        .menu li {
+            height: 25px;
+            line-height: 25px;
+            overflow: hidden;
+            padding: 5px;
+            color: #fff;
+            background-color: #07ca07;
+            border-bottom: 1px solid #ddd;
+            padding-left: 10px;
+        }
+
+        .menu ul.collapsed {
+            display: block;
+        }
+
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu li a:hover {
+            color: #fff;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript" src="tools.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var level = document.getElementsByClassName('level');
+            var oUl = document.getElementsByTagName('ul');
+            for (var i = 0; i < level.length; i++) {
+                level[i].index = i;
+                level[i].onclick = function () {
+                    if(oUl[this.index].className == 'collapsed'){
+                        oUl[this.index].className = '';
+                    }else{
+                        for(var j = 0; j < oUl.length; j++){
+                            oUl[j].className = '';  
+                        oUl[this.index].className = 'collapsed';
+                        }
+                    }
+                  
+                                                          
+                 
+                }
+            
+            }
+        
+        }
+    </script>
+</head>
+
+<body>
+    <div id="my_menu" class="menu">
+        <div>
+            <span class="level">Level 1</span>
+            <ul>
+                <li>1) <a href="" target="_blank">Change CSS Style</a></li>
+                <li>2) <a href="" target="_blank">Change Theme</a></li>
+                <li>3) <a href="" target="_blank">Alert Put Value</a></li>
+                <li>4) <a href="" target="_blank">Change Mdivtiple Color</a></li>
+                <li>5) <a href="" target="_blank">MouseOver-Out</a></li>
+                <li>6) <a href="" target="_blank">RememberPassword</a></li>
+            </ul>
+        </div>
+        <div>
+            <span class="level">Level 2</span>
+            <ul>
+                <li>1) <a href="" target="_blank">Input Method Select</a></li>
+                <li>2) <a href="" target="_blank">Alert Innerhtml</a></li>
+                <li>3) <a href="" target="_blank">Sum Array</a></li>
+                <li>4) <a href="" target="_blank">Pop-ups</a></li>
+                <li>5) <a href="" target="_blank">Change Style By Parameter</a></li>
+                <li>6) <a href="" target="_blank">Mouse Over-Out Change Opacity</a></li>
+                <li>7) <a href="" target="_blank">Tab</a></li>
+                <li>8) <a href="" target="_blank">Annual Calendar</a></li>
+                <li>9) <a href="" target="_blank">Change Theme</a></li>
+            </ul>
+        </div>
+        <div>
+            <span class="level">Level 3</span>
+            <ul>
+                <li>1)<a href="" target="_blank"></a></li>
+                <li>2)</li>
+                <li>3)</li>
+                <li>4)</li>
+                <li>5)</li>
+                <li>6)</li>
+            </ul>
+        </div>
+        <div>
+            <span class="level">Level 4</span>
+            <ul>
+                <li>1)<a href="" target="_blank"></a></li>
+                <li>2)</li>
+                <li>3)</li>
+                <li>4)</li>
+                <li>5)</li>
+                <li>6)</li>
+            </ul>
+        </div>
+        <div>
+            <span class="level">Level 5</span>
+            <ul>
+                <li>1)<a href="" target="_blank"></a></li>
+                <li>2)</li>
+                <li>3)</li>
+                <li>4)</li>
+                <li>5)</li>
+                <li>6)</li>
+            </ul>
+        </div>
+        <div>
+            <span class="level">Level 6</span>
+            <ul>
+                <li>1)<a href="" target="_blank"></a></li>
+                <li>2)</li>
+                <li>3)</li>
+                <li>4)</li>
+                <li>5)</li>
+                <li>6)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
