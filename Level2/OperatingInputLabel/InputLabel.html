@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating Input Label</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #container {
+        width: 320px;
+        margin: 100px auto;
+        padding: 10px 5px;
+        border: 1px solid #666;
+        border-radius: 5px;
+        background: #fafafa;
+    }
+
+    #header {
+        border-bottom: 1px solid #666;
+        padding-bottom: 10px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    #form {
+        padding: 10px;
+    }
+
+    #form tr {
+        height: 25px;
+    }
+
+    #form tr:first-child {
+        height: 40px;
+    }
+
+    #name input {
+        height: 20px;
+        line-height: 20px;
+        padding-left: 5px;
+    }
+
+    #form label {
+        padding: 0 5px;
+    }
+
+    #form label input {
+        margin-right: 5px;
+    }
+
+    #hobby {
+        display: block;
+    }
+
+    #form button {
+        float: right;
+        padding: 2px;
+        margin-right: 10px;
+    }
+
+    #btn {
+        text-align: center;
+        display: block;
+        margin-top: 10px;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var submit = document.getElementById('submit');
+        var reset = document.getElementById('reset');
+        submit.onclick = function () {
+            var name = getName();
+            var gender = getGender();
+            var hobby = getHobby();
+            alert(name + '\n' + gender + '\n' + hobby);
+        }
+
+        function getName() {
+            var name = document.getElementById('name').getElementsByTagName('input')[0];
+            return name.value;
+        }
+
+        function getGender() {
+            var gender = document.getElementById('gender').getElementsByTagName('input');
+            for (var i = 0; i < gender.length; i++) {
+                if (gender[i].checked) {
+                    return gender[i].value;
+                }
+            }
+        }
+
+        function getHobby() {
+            var hobby = document.getElementById('hobby').getElementsByTagName('input');
+            var result = []
+            for (var i = 0; i < hobby.length; i++) {
+                if (hobby[i].checked) {
+                    result.push(hobby[i].value);
+                }
+            }
+            return result;
+        }
+
+    }
+</script>
+
+<body>
+    <div id="container">
+        <div id="header">Info</div>
+        <form id="form">
+            <table>
+                <tr>
+                    <td id="name"><input type="text" value="Michael"></input></td>
+                </tr>
+                <tr>
+                    <td id="gender">
+                        <label><input type="radio" name="gender" value="Male">Male</label>
+                        <label><input type="radio" name="gender" value="Female">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="hobby">
+                        <label><input type="checkbox" name="hobby" value="book">Book</label>
+                        <label><input type="checkbox" name="hobby" value="music">Music</label>
+                        <label><input type="checkbox" name="hobby" value="sport">Sport</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="btn">
+                        <button id="reset" type="reset">Reset</button>
+                        <button id="submit" type="button">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
