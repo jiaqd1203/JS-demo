@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Demo Showcase</title>
-    <style type="text/css">
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -53,8 +54,9 @@
             padding-left: 10px;
         }
 
-        .menu ul.unfold {
+        .menu ul.collapsed {
             display: block;
+            background-color: #09f;
         }
 
         .menu li a {
@@ -69,27 +71,10 @@
         }
     </style>
     <script type="text/javascript" src="tools.js"></script>
-    <script type="text/javascript">
-        window.onload = function () {
-            var level = document.getElementsByClassName('level');
-            var oUl = document.getElementsByTagName('ul');
-            for (var i = 0; i < level.length; i++) {
-                level[i].index = i;
-                level[i].onclick = function () {
-                    if(oUl[this.index].className == 'unfold'){
-                        oUl[this.index].className = '';
-                    }else{
-                        for(var j = 0; j < oUl.length; j++){
-                            oUl[j].className = '';  
-                        oUl[this.index].className = 'unfold';
-                        }
-                    }                                                                                             
-                }            
-            }        
-        }
+    <script>
+
     </script>
 </head>
-
 <body>
     <div id="my_menu" class="menu">
         <div>
