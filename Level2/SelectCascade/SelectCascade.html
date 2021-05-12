@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Cascade</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #form{
+            margin: 100px auto;
+            width: 500px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var city = new Array();
+        /*
+        city = [['GB', 'London'],['GB', 'Manchester'],['GB', 'Glasgow'],
+        ['AU', 'Sydney'],['AU', 'Brisbane'],['AU', 'Brisbane'],
+        ['NZ', 'Auckland'],['NZ', 'Wellington'],['NZ', 'Christchurch']]
+        */
+        city[0] = ['GB', 'London'];
+        city[1] = ['GB', 'Manchester'];
+        city[2] = ['GB', 'Glasgow'];
+        city[3] = ['AU', 'Sydney'];
+        city[4] = ['AU', 'Melbourne'];
+        city[5] = ['AU', 'Brisbane'];
+        city[6] = ['NZ', 'Auckland'];
+        city[7] = ['NZ', 'Wellington'];
+        city[8] = ['NZ', 'Christchurch'];
+        window.onload = function(){
+            document.getElementById("country").onchange = filterCities;
+        };
+        function filterCities(){
+            // UK
+            var country = this.value;
+            var cities = document.getElementById("city");
+            // clear previous selection
+            cities.options.length = 0;
+            for (var i = 0; i < city.length; i++){
+                // city[1][0]=GB
+                var con = city[i][0];
+                // if country==GB
+                if (con == country){
+                    // London,Manchester,Glasgow
+                    var opt = new Option(city[i][1]);
+                        cities.add(opt);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <form id="form">
+        <select name="country" id="country">
+            <option value="">---</option>
+            <option value="GB">United Kingdom</option>
+            <option value="AU">Australia</option>
+            <option value="NZ">New Zealand</option>
+        </select>
+        <select name="city" id="city"></select>
+    </form>
+</body>
+
+</html>
