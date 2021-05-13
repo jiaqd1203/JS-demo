@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Demo Showcase</title>
-    <style type="text/css">
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -38,23 +40,30 @@
             cursor: pointer;
         }
 
-        .menu ul {
-            display: none;
+        .menu span.current {
+            background-color: #09f;
+        }
+
+        .menu ul.collapsed {
+            height: 0px;
+            /* background-color: #07ca07; */
         }
 
         .menu li {
             height: 25px;
             line-height: 25px;
-            overflow: hidden;
+            /* overflow: hidden; */
             padding: 5px;
             color: #fff;
-            background-color: #07ca07;
+            /* background-color: #07ca07; */
             border-bottom: 1px solid #ddd;
             padding-left: 10px;
         }
 
-        .menu ul.unfold {
+        .menu ul {
             display: block;
+            overflow: hidden;
+            background-color: rgb(76, 182, 248);
         }
 
         .menu li a {
@@ -69,23 +78,40 @@
         }
     </style>
     <script type="text/javascript" src="tools.js"></script>
-    <script type="text/javascript">
+    <script>
         window.onload = function () {
             var level = document.getElementsByClassName('level');
             var oUl = document.getElementsByTagName('ul');
+            var open = oUl[0];
+            var levelColor = level[0];
             for (var i = 0; i < level.length; i++) {
                 level[i].index = i;
                 level[i].onclick = function () {
-                    if(oUl[this.index].className == 'unfold'){
-                        oUl[this.index].className = '';
-                    }else{
-                        for(var j = 0; j < oUl.length; j++){
-                            oUl[j].className = '';  
-                        oUl[this.index].className = 'unfold';
-                        }
-                    }                                                                                             
-                }            
-            }        
+                    // var parentDiv = this.nextSibling;
+                    toggleClass(level[this.index], "current");
+                    if (levelColor != level[this.index] && hasClass(levelColor, "current")) {
+                        toggleClass(levelColor, "current");
+                    }
+                    levelColor = level[this.index];
+
+                    var sib = this.parentNode.children[1];
+                    toggleMenu(sib);
+                    if (open != sib && !hasClass(open, "collapsed")) {
+                        toggleMenu(open);
+                    }
+                    open = sib;
+                };
+            }
+
+            function toggleMenu(obj) {
+                var begin = obj.offsetHeight;
+                toggleClass(obj, "collapsed");
+                var end = obj.offsetHeight;
+                obj.style.height = begin + "px";
+                move(obj, "height", end, 20, function () {
+                    obj.style.height = "";
+                });
+            }
         }
     </script>
 </head>
@@ -94,7 +120,7 @@
     <div id="my_menu" class="menu">
         <div>
             <span class="level">Level 1</span>
-            <ul>
+            <ul class="collapsed">
                 <li>1) <a href="" target="_blank">Change CSS Style</a></li>
                 <li>2) <a href="" target="_blank">Change Theme</a></li>
                 <li>3) <a href="" target="_blank">Alert Put Value</a></li>
@@ -105,7 +131,7 @@
         </div>
         <div>
             <span class="level">Level 2</span>
-            <ul>
+            <ul class="collapsed">
                 <li>1) <a href="" target="_blank">Input Method Select</a></li>
                 <li>2) <a href="" target="_blank">Alert Innerhtml</a></li>
                 <li>3) <a href="" target="_blank">Sum Array</a></li>
@@ -119,7 +145,7 @@
         </div>
         <div>
             <span class="level">Level 3</span>
-            <ul>
+            <ul class="collapsed">
                 <li>1)<a href="" target="_blank"></a></li>
                 <li>2)</li>
                 <li>3)</li>
@@ -130,7 +156,7 @@
         </div>
         <div>
             <span class="level">Level 4</span>
-            <ul>
+            <ul class="collapsed">
                 <li>1)<a href="" target="_blank"></a></li>
                 <li>2)</li>
                 <li>3)</li>
@@ -141,7 +167,7 @@
         </div>
         <div>
             <span class="level">Level 5</span>
-            <ul>
+            <ul class="collapsed">
                 <li>1)<a href="" target="_blank"></a></li>
                 <li>2)</li>
                 <li>3)</li>
@@ -152,7 +178,7 @@
         </div>
         <div>
             <span class="level">Level 6</span>
-            <ul>
+            <ul class="collapsed">
                 <li>1)<a href="" target="_blank"></a></li>
                 <li>2)</li>
                 <li>3)</li>
@@ -163,4 +189,5 @@
         </div>
     </div>
 </body>
+
 </html>
