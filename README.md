@@ -1,2 +1,4 @@
 # JS-demo
-##JS-Demo-Showcase(https://jiaqd1203.github.io/JS-demo/JS-Demo-Showcase/index.html)<br>
+## <a href="https://jiaqd1203.github.io/JS-demo/JS-Demo-Showcase/index.html" target="_blank">JS-Demo-Showcase</a><br/>
+#### Level 1
+1. [AlertInputValue](https://jiaqd1203.github.io/JS-demo/Level1/AlertInputValue/AlertInputValue.html)<br>
