@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .menu {
+            width: 350px;
+            margin: 200px auto;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px;
+            color: #fff;
+            border: 1px solid grey;
+        }
+
+        .menu div {
+            background-color: #07ca07;
+            overflow: hidden;
+        }
+
+        .menu span {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            font-weight: 700;
+            background-color: #07ca07;
+            border-bottom: 1px solid #ddd;
+            padding: 5px;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+
+        .menu div.collapsed {
+            height: 30px;
+        }
+
+        .menu li {
+            height: 25px;
+            line-height: 25px;
+            overflow: hidden;
+            padding: 5px;
+            color: #fff;
+            background-color: #07ca07;
+            border-bottom: 1px solid #ddd;
+            padding-left: 10px;
+        }
+
+        .menu ul {
+            display: block;
+        }
+
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu li a:hover {
+            color: #fff;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript" src="tools.js"></script>
+    <script>
+        window.onload = function () {
+            var level = document.getElementsByClassName('level');
+            var openDiv = level[0].parentNode;
+            for (var i = 0; i < level.length; i++) {
+                level[i].onclick = function () {                 
+                    var parentDiv = this.parentNode;
+                    toggleMenu(parentDiv);
+                    if (openDiv != parentDiv && !hasClass(openDiv, "collapsed")) {
+                        toggleMenu(openDiv);
+                    }
+                    openDiv = parentDiv;
+                };
+            }
+
+            function toggleMenu(obj) {
+                var begin = obj.offsetHeight;
+                toggleClass(obj, "collapsed");
+                var end = obj.offsetHeight;
+                obj.style.height = begin + "px";
+                move(obj, "height", end, 10, function () {
+                    obj.style.height = "";
+                });
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="my_menu" class="menu">
+        <div class="collapsed">
+            <span class="level">Level 1</span>
+            <li>1) <a href="" target="_blank">Change CSS Style</a></li>
+            <li>2) <a href="" target="_blank">Change Theme</a></li>
+            <li>3) <a href="" target="_blank">Alert Put Value</a></li>
+            <li>4) <a href="" target="_blank">Change Mdivtiple Color</a></li>
+            <li>5) <a href="" target="_blank">MouseOver-Out</a></li>
+            <li>6) <a href="" target="_blank">RememberPassword</a></li>
+        </div>
+        <div class="collapsed">
+            <span class="level">Level 2</span>
+            <li>1) <a href="" target="_blank">Input Method Select</a></li>
+            <li>2) <a href="" target="_blank">Alert Innerhtml</a></li>
+            <li>3) <a href="" target="_blank">Sum Array</a></li>
+            <li>4) <a href="" target="_blank">Pop-ups</a></li>
+            <li>5) <a href="" target="_blank">Change Style By Parameter</a></li>
+            <li>6) <a href="" target="_blank">Mouse Over-Out Change Opacity</a></li>
+            <li>7) <a href="" target="_blank">Tab</a></li>
+            <li>8) <a href="" target="_blank">Annual Calendar</a></li>
+            <li>9) <a href="" target="_blank">Change Theme</a></li>
+        </div>
+        <div class="collapsed">
+            <span class="level">Level 3</span>
+            <li>1)<a href="" target="_blank"></a></li>
+            <li>2)</li>
+            <li>3)</li>
+            <li>4)</li>
+            <li>5)</li>
+            <li>6)</li>
+        </div>
+        <div class="collapsed">
+            <span class="level">Level 4</span>
+            <li>1)<a href="" target="_blank"></a></li>
+            <li>2)</li>
+            <li>3)</li>
+            <li>4)</li>
+            <li>5)</li>
+            <li>6)</li>
+        </div>
+        <div class="collapsed">
+            <span class="level">Level 5</span>
+            <li>1)<a href="" target="_blank"></a></li>
+            <li>2)</li>
+            <li>3)</li>
+            <li>4)</li>
+            <li>5)</li>
+            <li>6)</li>
+        </div>
+        <div class="collapsed">
+            <span class="level">Level 6</span>
+            <li>1)<a href="" target="_blank"></a></li>
+            <li>2)</li>
+            <li>3)</li>
+            <li>4)</li>
+            <li>5)</li>
+            <li>6)</li>
+        </div>
+    </div>
+</body>
+
+</html>
