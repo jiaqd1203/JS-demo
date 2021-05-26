@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Countdown</title>
+    <style>
+        body,
+        div {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #fff;
+            font: 16px/1.5 \5fae\8f6f\96c5\9ed1;
+        }
+
+        #countdown {
+            width: 300px;
+            text-align: center;
+            background: #fff;
+            margin: 10px auto;
+            padding: 20px 0;
+        }
+
+        input {
+            border: 0;
+            width: 283px;
+            height: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            background: url(img/btn-1.png) no-repeat;
+        }
+
+        input.cancel {
+            background-position: 0 -50px;
+        }
+
+        span {
+            color: #000;
+            width: 80px;
+            line-height: 2;
+            background: #fbfbfb;
+            border: 2px solid #b4b4b4;
+            margin: 0 10px;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="countdown">
+        <span>01</span>:<span>40</span>
+        <input type="button" value="" />
+        <button class="btn primary-btn">Start</button>
+    </div>
+</body>
+
+</html>
