@@ -9,3 +9,6 @@
 6. [RememberPassword](https://jiaqd1203.github.io/JS-demo/Level1/RememberPassword/RememberPassword.html)<br>
 #### Level 2
 1. [AlertInnerhtml](https://jiaqd1203.github.io/JS-demo/Level2/AlertInnerhtml/AlertInnerhtml.html)<br>
+2. [AnnualCalendar](https://jiaqd1203.github.io/JS-demo/Level2/AnnualCalendar/AnnualCalendar.html)<br>
+
+
