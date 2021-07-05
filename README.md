@@ -11,4 +11,6 @@
 1. [AlertInnerhtml](https://jiaqd1203.github.io/JS-demo/Level2/AlertInnerhtml/AlertInnerhtml.html)<br>
 2. [AnnualCalendar](https://jiaqd1203.github.io/JS-demo/Level2/AnnualCalendar/AnnualCalendar.html)<br>
 3. [CategoryNavigation](https://jiaqd1203.github.io/JS-demo/Level2/CategoryNavigation/CategoryNavigation.html)<br>
+4. [ChangeStyleParameter](https://jiaqd1203.github.io/JS-demo/Level2/ChangeStyleParameter/ChangeStyleParameter.html)<br>
+
 
